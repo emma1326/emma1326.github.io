@@ -1,6 +1,6 @@
 body { 
-  background-color:lavender; 
-  font-family: 'Roboto', sans-serif;
+  background-color: lavender; 
+  font-family: sans-serif;
 } 
 
 nav ul { 
@@ -10,6 +10,8 @@ nav ul {
   display: flex; 
   justify-content: center; 
   gap: 5px; 
+  font-family: sans-serif;
+
 } 
 
 nav a { 
@@ -18,10 +20,12 @@ nav a {
   font-weight: bold; 
   font-size: 1.2em; 
   padding: 0.5em 1em; 
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
+  font-family: sans-serif;
+
 } 
 
 nav a:hover { 
-  color: #007BFF; 
+  color: #FFD700; 
   text-decoration: underline; 
 }
