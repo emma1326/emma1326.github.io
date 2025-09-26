@@ -4,10 +4,10 @@ body {
 } 
 
 nav {
-  background-color: #ad5cad;
+  background-color: #B284BE;
   padding: 1em 0;           
-  border: 3px solid #B284BE; 
-  border-radius: 20px;        
+  border: 3px solid #ad5cad; 
+  border-radius: 40px;        
   max-width: 100%;   
   margin: 20px auto;        
   box-sizing: border-box;    
