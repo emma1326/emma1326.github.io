@@ -4,13 +4,13 @@ body {
 } 
 
 nav {
-  background-color: #300030;
+  background-color: #784B84;
   padding: 1em 0;           
   border-radius: 40px;        
   max-width: 100%;   
   margin: 20px auto;        
   box-sizing: border-box;    
-  box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
 }
 
 nav ul { 
