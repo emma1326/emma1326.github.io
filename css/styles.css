@@ -4,7 +4,7 @@ body {
 } 
 
 nav {
-  background-color: #784B84;
+  background-color: #231832;
   padding: 1em 0;           
   border-radius: 40px;        
   max-width: 100%;   
@@ -30,14 +30,14 @@ nav a {
   font-weight: bold; 
   font-size: 1.2em; 
   padding: 0.5em 1em; 
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
   font-family: sans-serif;
 
 } 
 
 nav a:hover { 
   color: #FFD700; 
-  text-decoration: underline; 
+  text-decoration: scale(1.1); 
 }
 
 main img {
