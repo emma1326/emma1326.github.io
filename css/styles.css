@@ -3,6 +3,16 @@ body {
   font-family: sans-serif;
 } 
 
+nav {
+  background-color: #ad5cad;
+  padding: 1em 0;           
+  border: 3px solid #ad5cad; 
+  border-radius: 0px;        
+  max-width: 100%;   
+  margin: 20px auto;        
+  box-sizing: border-box;    
+}
+
 nav ul { 
   list-style: none; 
   padding: 0; 
