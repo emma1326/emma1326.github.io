@@ -27,10 +27,10 @@ nav ul {
 nav a { 
   text-decoration: none; 
   color: lavender; 
-  font-weight: bold; 
+  font-weight: 600; 
   font-size: 1.2em; 
   padding: 0.5em 1em; 
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease, font-weight 0.3s ease;
   font-family: sans-serif;
 
 } 
@@ -38,6 +38,7 @@ nav a {
 nav a:hover { 
   color: #FFD700; 
   text-decoration: scale(1.5); 
+  font-weight: 700;
 }
 
 main img {
