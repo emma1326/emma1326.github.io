@@ -11,6 +11,7 @@ nav {
   max-width: 100%;   
   margin: 20px auto;        
   box-sizing: border-box;    
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
 }
 
 nav ul { 
