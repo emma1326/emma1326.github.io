@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello, First Form!</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+</head>
+
+<body>
+    <h1>Hello, First Form!</h1>
+
+
+    <h3>Input your information here</h3>
+    <form action="https://hh3dlab.fi/formdemo/formhandler.php" method="post">
+        <table border="1px">
+            <tr>
+                <td><label for="firstName">First Name:</label></td>
+                <br>
+                <td><input type="text" id="First Name" : name="firstName"></td>
+
+            </tr>
+
+            <tr>
+                <td><label for="lastName">Last Name:</label></td>
+                <br>
+                <td><input type="text" id="Last Name" : name="lastName"></td>
+
+            </tr>
+
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <br>
+                <td><input type="password" id="password" : name="password"></td>
+
+            </tr>
+
+            <tr>
+                <td><label for="feedback">Your Feedback:</label></td>
+                <br>
+                <td><textarea rows="4" cols="30" : id="feedback" name="feedback"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td><label for="socialmedia">Your social media:</label></td>
+
+                <td>
+                    <input type="checkbox" id="facebook" name="socialMedia[]" value="Facebook">
+                    <label for="facebook">Facebook</label><br>
+                    <input type="checkbox" id="X" name="socialMedia[]" value="X">
+                    <label for="X">X</label><br>
+                    <input type="checkbox" id="intagram" name="socialMedia[]" value="Instagram">
+                    <label for="instagram">Instagram</label>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <center><input type="submit"></center>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+
+</html>
