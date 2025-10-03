@@ -56,6 +56,10 @@ nav a:hover {
   font-size: 1.2em;
   color: lavender;
   font-weight: bold;
+  position: fixed;   /* stays on screen when scrolling */
+  top: 10px;         /* distance from top */
+  right: 20px;       /* distance from right */
+  z-index: 1000;     /* make sure it's on top of other content */
   letter-spacing: 1px;
 }
 
