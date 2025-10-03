@@ -1,31 +1,14 @@
-body {
-  background-color: lavender;
-  font-family: sans-serif;
-  margin: 0;
-}
-
-.container {
-  display: grid;
-  grid-template-areas:
-    "nav"
-    "main";
-  grid-template-rows: auto 1fr;
-  min-height: 100vh;
-}
-
-/* Navbar full width */
 nav {
-  width: 100vw;                /* full viewport width */
+  width: 100%;                /* full width of the viewport */
   background-color: #231832;
   padding: 1em 2em;
-  margin: 20px 0;              /* vertical spacing only */
-  border-radius: 40px;         /* keep rounded corners */
+  border-radius: 0 0 40px 40px; /* rounded bottom corners only */
   box-sizing: border-box;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
 
-  display: flex;               /* flex container */
+  display: flex;
   justify-content: space-between; /* links left, clock right */
-  align-items: center;         /* vertical center */
+  align-items: center;
 }
 
 nav ul {
@@ -50,45 +33,9 @@ nav a:hover {
   text-shadow: 0 2px 5px rgba(255, 215, 0, 0.5);
 }
 
-/* Clock inside navbar with subtle glow */
 #clock {
   font-size: 1.2em;
   color: lavender;
   font-weight: bold;
-  letter-spacing: 1px;
   text-shadow: 0 1px 3px rgba(255, 215, 0, 0.5);
-  transition: all 0.6s ease;
-}
-
-/* Main content */
-main {
-  grid-area: main;
-  padding: 20px;
-}
-
-main img {
-  display: block;
-  margin: 20px auto;
-  max-width: 100%;
-  height: auto;
-  border-radius: 40px; /* rounded image */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 1em;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  #clock {
-    align-self: flex-end; /* stick right under links on mobile */
-  }
 }
