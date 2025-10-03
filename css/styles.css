@@ -1,31 +1,12 @@
-body {
-  background-color: lavender;
-  font-family: sans-serif;
-  margin: 0;
-}
-
-.container {
-  display: grid;
-  grid-template-areas:
-    "nav"
-    "main";
-  grid-template-rows: auto 1fr;
-  min-height: 100vh;
-}
-
 nav {
-  grid-area: nav;
+  width: 100%;             /* full width of the screen */
   background-color: #231832;
-  padding: 1em 1.5em;
-  border-radius: 40px;
-  max-width: 100%;
-  margin: 20px auto;
+  padding: 1em 2em;
   box-sizing: border-box;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 
-  display: flex;                  /* flexbox for nav */
-  justify-content: space-between; /* spread items apart */
-  align-items: center;            /* vertically center */
+  display: flex;           /* flex container */
+  justify-content: space-between; /* links left, clock right */
+  align-items: center;     /* vertically center items */
 }
 
 nav ul {
@@ -33,7 +14,7 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 10px;
+  gap: 15px;               /* space between links */
 }
 
 nav a {
@@ -41,7 +22,6 @@ nav a {
   color: lavender;
   font-weight: 500;
   font-size: 1.2em;
-  padding: 0.5em 1em;
   transition: all 0.3s ease;
 }
 
@@ -51,59 +31,29 @@ nav a:hover {
   text-shadow: 0 2px 5px rgba(255, 215, 0, 0.5);
 }
 
-/* Clock styles */
+/* Clock styling inside navbar */
 #clock {
-  color: black;
+  font-size: 1.2em;
+  color: lavender;
   font-weight: bold;
-  position: flex;   /* stays on screen when scrolling */
-  top: 20px;         /* distance from top */
-  right: 20px;       /* distance from right */
-  z-index: 1000;     /* make sure it's on top of other content */
   letter-spacing: 1px;
 }
 
-main {
-  grid-area: main;
-  padding: 20px;
-}
-
-main img {
-  display: block;
-  margin: 20px auto;
-  max-width: 100%;
-  height: auto;
-  border-radius: 40px;
-}
-
+/* Responsive for smaller screens */
 @media (max-width: 768px) {
-  body {
-    background-color: #8E4585;
-  }
-
-  .container {
-    grid-template-areas:
-      "nav"
-      "main";
-    grid-template-columns: 1fr;
-  }
-
   nav {
     flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
+    padding: 1em;
   }
 
   nav ul {
     flex-direction: column;
-    align-items: center;
-  }
-
-  nav a {
-    font-size: 1em;
-    padding: 0.5em;
+    width: 100%;
   }
 
   #clock {
-    font-size: 1em;
-    margin-top: 5px;
+    align-self: flex-end; /* stick to right on mobile */
   }
 }
