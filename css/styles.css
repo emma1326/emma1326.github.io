@@ -14,19 +14,19 @@ body {
   padding: 0 20px; /* aligns content with navbar padding */
 }
 
-/* ===== Navbar ===== */
+/* ===== Navbar (capsule-style) ===== */
 nav {
-  width: 100%;                   /* full width of the viewport */
+  width: calc(100% - 40px);       /* almost full width, leave 20px margin on each side */
   background-color: #231832;
-  padding: 1em 20px;             /* top/bottom 1em, left/right 20px */
-  border-radius: 0 0 40px 40px;  /* rounded bottom corners */
+  padding: 1em 2em;               /* top/bottom 1em, left/right 2em */
+  border-radius: 40px;            /* fully rounded pill shape */
   box-sizing: border-box;
   box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+  margin: 20px auto;              /* center it with small horizontal space */
 
   display: flex;
   justify-content: space-between; /* links left, clock right */
   align-items: center;
-  margin-bottom: 20px;           /* spacing below navbar */
 }
 
 nav ul {
@@ -59,7 +59,6 @@ nav a:hover {
   letter-spacing: 1px;
   text-shadow: 0 1px 3px rgba(255, 215, 0, 0.5);
 
-  /* optional gentle pulse animation */
   animation: pulseGlow 2s infinite;
 }
 
@@ -79,7 +78,7 @@ main img {
   margin: 20px auto;
   max-width: 100%;
   height: auto;
-  border-radius: 40px; /* rounded picture */
+  border-radius: 40px; /* keep rounded image */
 }
 
 /* ===== Responsive ===== */
@@ -89,6 +88,7 @@ main img {
     align-items: flex-start;
     gap: 10px;
     padding: 1em 20px;
+    width: calc(100% - 40px);
   }
 
   nav ul {
@@ -97,6 +97,6 @@ main img {
   }
 
   #clock {
-    align-self: flex-end; /* stick to right under links on mobile */
+    align-self: flex-end;
   }
 }
