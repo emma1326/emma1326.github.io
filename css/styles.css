@@ -1,12 +1,32 @@
+body {
+  background-color: lavender;
+  font-family: sans-serif; /* keep your original font */
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "main";
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* Navbar */
 nav {
-  width: 100%;             /* full width of the screen */
+  grid-area: nav;
   background-color: #231832;
   padding: 1em 2em;
+  max-width: 100%;
+  margin: 20px auto;
+  border-radius: 40px; /* original rounded style */
   box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 
-  display: flex;           /* flex container */
-  justify-content: space-between; /* links left, clock right */
-  align-items: center;     /* vertically center items */
+  display: flex;                 /* flex container */
+  justify-content: space-between;/* left links, right clock */
+  align-items: center;           /* vertical center */
 }
 
 nav ul {
@@ -14,7 +34,7 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 15px;               /* space between links */
+  gap: 15px;                     /* space between links */
 }
 
 nav a {
@@ -31,12 +51,29 @@ nav a:hover {
   text-shadow: 0 2px 5px rgba(255, 215, 0, 0.5);
 }
 
-/* Clock styling inside navbar */
+/* Clock inside navbar */
 #clock {
   font-size: 1.2em;
   color: lavender;
   font-weight: bold;
   letter-spacing: 1px;
+
+  /* subtle glow to match link hover effect */
+  text-shadow: 0 1px 2px rgba(255, 215, 0, 0.5);
+}
+
+/* Main content */
+main {
+  grid-area: main;
+  padding: 20px;
+}
+
+main img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 40px; /* original rounded picture */
 }
 
 /* Responsive for smaller screens */
@@ -54,6 +91,6 @@ nav a:hover {
   }
 
   #clock {
-    align-self: flex-end; /* stick to right on mobile */
+    align-self: flex-end; /* stick to right under links on mobile */
   }
 }
