@@ -54,7 +54,7 @@ nav a:hover {
 /* Clock styles */
 #clock {
   font-size: 1.2em;
-  color: lavender;
+  color: black;
   font-weight: bold;
   position: fixed;   /* stays on screen when scrolling */
   top: 10px;         /* distance from top */
