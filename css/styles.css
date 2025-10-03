@@ -53,7 +53,6 @@ nav a:hover {
 
 /* Clock styles */
 #clock {
-  grid-area: clock;
   background-color: #231832;
   padding: 1em 1.5em;
   border-radius: 40px;
@@ -64,7 +63,7 @@ nav a:hover {
   font-size: 1.2em;
   color: black;
   font-weight: bold;
-  position: right;   /* stays on screen when scrolling */
+  position: flex;   /* stays on screen when scrolling */
   top: 10px;         /* distance from top */
   right: 20px;       /* distance from right */
   z-index: 1000;     /* make sure it's on top of other content */
