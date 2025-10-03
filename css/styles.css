@@ -1,6 +1,6 @@
 body {
   background-color: lavender;
-  font-family: sans-serif; /* keep your original font */
+  font-family: sans-serif;
   margin: 0;
 }
 
@@ -13,20 +13,19 @@ body {
   min-height: 100vh;
 }
 
-/* Navbar */
+/* Navbar full width */
 nav {
-  grid-area: nav;
+  width: 100vw;                /* full viewport width */
   background-color: #231832;
   padding: 1em 2em;
-  max-width: 100%;
-  margin: 20px auto;
-  border-radius: 40px; /* original rounded style */
+  margin: 20px 0;              /* vertical spacing only */
+  border-radius: 40px;         /* keep rounded corners */
   box-sizing: border-box;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 
-  display: flex;                 /* flex container */
-  justify-content: space-between;/* left links, right clock */
-  align-items: center;           /* vertical center */
+  display: flex;               /* flex container */
+  justify-content: space-between; /* links left, clock right */
+  align-items: center;         /* vertical center */
 }
 
 nav ul {
@@ -34,7 +33,7 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 15px;                     /* space between links */
+  gap: 15px;
 }
 
 nav a {
@@ -51,15 +50,14 @@ nav a:hover {
   text-shadow: 0 2px 5px rgba(255, 215, 0, 0.5);
 }
 
-/* Clock inside navbar */
+/* Clock inside navbar with subtle glow */
 #clock {
   font-size: 1.2em;
   color: lavender;
   font-weight: bold;
   letter-spacing: 1px;
-
-  /* subtle glow to match link hover effect */
-  text-shadow: 0 1px 2px rgba(255, 215, 0, 0.5);
+  text-shadow: 0 1px 3px rgba(255, 215, 0, 0.5);
+  transition: all 0.6s ease;
 }
 
 /* Main content */
@@ -73,10 +71,10 @@ main img {
   margin: 20px auto;
   max-width: 100%;
   height: auto;
-  border-radius: 40px; /* original rounded picture */
+  border-radius: 40px; /* rounded image */
 }
 
-/* Responsive for smaller screens */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -91,6 +89,6 @@ main img {
   }
 
   #clock {
-    align-self: flex-end; /* stick to right under links on mobile */
+    align-self: flex-end; /* stick right under links on mobile */
   }
 }
