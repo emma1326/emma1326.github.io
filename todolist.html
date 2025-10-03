@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #taskInput {
+            width: calc(100% - 70px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #addButton {
+            width: 60px;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #addButton:hover {
+            background-color: #4cae4c;
+        }
+
+        #taskList {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        #taskList li {
+            background-color: #eee;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            flex-wrap: wrap;
+        }
+
+        #taskList li.completed {
+            text-decoration: line-through;
+            color: #888;
+            background-color: #ddd;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .task-button {
+            border: none;
+            padding: 5px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .delete-button {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        .delete-button:hover {
+            background-color: #c9302c;
+        }
+
+        .started-button {
+            background-color: #0275d8;
+            color: white;
+        }
+
+        .half-button {
+            background-color: #f0ad4e;
+            color: white;
+        }
+
+        .done-button {
+            background-color: #5cb85c;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>My To-Do List</h1>
+        <input type="text" id="taskInput" placeholder="Add a new task...">
+        <button id="addButton">Add</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const taskInput = document.getElementById('taskInput');
+            const addButton = document.getElementById('addButton');
+            const taskList = document.getElementById('taskList');
+
+            function addTask() {
+                const taskText = taskInput.value.trim();
+
+                if (taskText !== "") {
+                    const newTask = document.createElement('li');
+
+                    // Create task text
+                    const taskSpan = document.createElement('span');
+                    taskSpan.textContent = taskText;
+                    newTask.appendChild(taskSpan);
+
+                    // Buttons container
+                    const buttonsDiv = document.createElement('div');
+                    buttonsDiv.classList.add('buttons');
+
+                    // Status buttons
+                    const startedButton = document.createElement('button');
+                    startedButton.textContent = "Started";
+                    startedButton.classList.add('task-button', 'started-button');
+                    startedButton.addEventListener('click', () => {
+                        taskSpan.style.color = "#0275d8";
+                        taskSpan.style.textDecoration = "none";
+                    });
+
+                    const halfButton = document.createElement('button');
+                    halfButton.textContent = "50% Done";
+                    halfButton.classList.add('task-button', 'half-button');
+                    halfButton.addEventListener('click', () => {
+                        taskSpan.style.color = "#f0ad4e";
+                        taskSpan.style.textDecoration = "none";
+                    });
+
+                    const doneButton = document.createElement('button');
+                    doneButton.textContent = "100% Done";
+                    doneButton.classList.add('task-button', 'done-button');
+                    doneButton.addEventListener('click', () => {
+                        taskSpan.style.color = "#5cb85c";
+                        taskSpan.style.textDecoration = "line-through";
+                    });
+
+                    // Delete button
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = "Delete";
+                    deleteButton.classList.add('task-button', 'delete-button');
+                    deleteButton.addEventListener('click', () => {
+                        taskList.removeChild(newTask);
+                    });
+
+                    // Append buttons
+                    buttonsDiv.appendChild(startedButton);
+                    buttonsDiv.appendChild(halfButton);
+                    buttonsDiv.appendChild(doneButton);
+                    buttonsDiv.appendChild(deleteButton);
+                    newTask.appendChild(buttonsDiv);
+
+                    taskList.appendChild(newTask);
+                    taskInput.value = "";
+                }
+            }
+
+            addButton.addEventListener('click', addTask);
+            taskInput.addEventListener('keypress', function (event) {
+                if (event.key === 'Enter') addTask();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
